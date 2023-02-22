@@ -1,0 +1,7 @@
+{
+  "name": "conversor-temperatura-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
