@@ -11,6 +11,8 @@ export class HomePage {
   escalaPara!: string;
   temperaturaPara!: number;
 
+  historicoList: string[] = [];
+
   constructor() {}
 
   async bt_converter() {
@@ -27,6 +29,8 @@ export class HomePage {
             this.temperaturaPara = this.converterParaKelvin();
             break;
         }
+
+        this.historicoList.push(this.temperaturaDe + " " + this.escalaDe + " -> "+ this.temperaturaPara+" "+ this.escalaPara);
       } else {
         alert("A segunda escala não pode ser igual a primeira!")
       }

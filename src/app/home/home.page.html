@@ -21,7 +21,7 @@
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked">Escala</ion-label>
-        <ion-select value="" okText="Confirmar" cancelText="Cancelar" [(ngModel)]="escalaDe" placeholder="Selecione uma opção">
+        <ion-select value="" okText="Confirmar" cancelText="Cancelar" [(ngModel)]="escalaDe" placeholder="Selecione uma opção" required>
           <ion-select-option value="celsius">Celsius (ºC)</ion-select-option>
           <ion-select-option value="fahrenheit">Fahrenheit (ºF)</ion-select-option>
           <ion-select-option value="kelvin">Kelvin (K)</ion-select-option>
@@ -52,7 +52,7 @@
 
       <ion-item>
         <ion-label position="stacked">Temperatura</ion-label>
-        <ion-input clearInput type="number" [(ngModel)]="temperaturaPara"></ion-input>
+        <ion-input clearInput type="number" [readonly]="true" [(ngModel)]="temperaturaPara"></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>
@@ -67,4 +67,19 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Histórico</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="full" *ngFor="let item of historicoList">
+        <ion-item>
+          <ion-label position="center">{{item}}</ion-label>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
