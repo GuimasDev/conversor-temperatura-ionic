@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-title>
       Conversor de Temperatura
     </ion-title>
@@ -35,7 +35,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card color="">
     <ion-card-header>
       <ion-card-title>Para:</ion-card-title>
     </ion-card-header>
@@ -75,9 +75,14 @@
 
     <ion-card-content>
       <ion-list lines="full" *ngFor="let item of historicoList">
-        <ion-item>
-          <ion-label position="center">{{item}}</ion-label>
-        </ion-item>
+        <ion-grid>
+          <ion-row class="ion-text-center">
+            <ion-col ><ion-label position="center" >{{item.tempDe}} {{item.escalaDe}}</ion-label></ion-col>
+            <ion-col><ion-icon name="arrow-forward-outline"></ion-icon></ion-col>
+            <ion-col><ion-label position="center">{{item.tempPara}} {{item.escalaPara}}</ion-label></ion-col>
+          </ion-row>
+        </ion-grid>
+
 
       </ion-list>
     </ion-card-content>
